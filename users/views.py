@@ -1,3 +1,4 @@
+from re import template
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
@@ -18,3 +19,7 @@ def register(request):
     else:
         form = UserRegistrationForm()
     return render(request, 'users/register.html', {'form': form})
+
+
+def profile(request):
+    return render (request, 'users/profile.html')
